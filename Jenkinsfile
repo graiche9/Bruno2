@@ -11,9 +11,9 @@ pipeline {
                 sh 'npm install -g bru'
             }
         }
-        stage('Check bru version') {
+        stage('Install Dependencies') {
             steps {
-                sh 'bru --version'
+                sh 'npm install'
             }
         }
         stage('Run Bruno Test') {
