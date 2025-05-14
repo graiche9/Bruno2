@@ -11,11 +11,7 @@ pipeline {
                 sh 'npm install -g bru'
             }
         }
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
+       
         stage('Run Bruno Test') {
             steps {
                 sh 'bru run GetUsers.bru --reporter-html results.html'
