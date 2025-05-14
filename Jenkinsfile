@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-    image 'node:18-alpine'
-            args '-u root' // si nécessaire pour les droits d’écriture
+            image 'node:20-bullseye'
+            args '-u root' 
         }
     }
     stages {
