@@ -1,16 +1,20 @@
-pipeline{
+pipeline {
     agent any
+
     stages {
-        stage('Verify integration'){
-            steps{
+        stage('Install Bruno CLI') {
+            steps {
+                sh 'npm install -g bru'
+            }
+        }
+        stage('Check bru version') {
+            steps {
                 sh 'bru --version'
             }
         }
-        stage('run all files in the collection'){
-            steps{
-                dir(''){
-                    sh 'bru run'
-                }
+        stage('Run Bruno Test') {
+            steps {
+                sh 'bru run GetUsers.bru --reporter-html results.html'
             }
         }
     }
