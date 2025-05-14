@@ -1,8 +1,9 @@
 pipeline {
     agent {
         docker {
-            image 'node:20' 
-            }
+            image 'alpine/bruno'
+            args '-u root' // si nécessaire pour les droits d’écriture
+        }
     }
     stages {
         stage('Install Bruno CLI') {
