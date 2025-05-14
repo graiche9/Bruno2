@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'alpine/bruno'
+    image 'node:18-alpine'
             args '-u root' // si nécessaire pour les droits d’écriture
         }
     }
