@@ -14,8 +14,7 @@ pipeline {
        
         stage('Run Bruno Test') {
             steps {
-                sh 'bru run tests/ --reporter-html results.html
-'
+                sh 'bru run tests/ --reporter-html results.html'
             }
         }
     }
